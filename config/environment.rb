@@ -81,7 +81,7 @@ memcache_options = {
 }
 
 CACHE = MemCache.new memcache_options
-CACHE.servers = '10.0.128.51'
+CACHE.servers = 'localhost:11211'
 
 ActionController::Base.session_options[:expires] = 1800
 ActionController::Base.session_options[:cache] = CACHE
