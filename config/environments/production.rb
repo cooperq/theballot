@@ -31,7 +31,10 @@ config.action_mailer.delivery_method = :smtp
 config.action_mailer.smtp_settings = {
   :domain             => "theballot.com",
   :perform_deliveries => true,
-  :address            => 'smtp.engineyard.com',
+  :address            => 'smtp.sendgrid.net',
+  :user_name          => 'cooper@radicaldesigns.org',
+  :password           => 'v0t30rd13',
+  :authentication     => :plain,
   :port               => 25 
 }
 
