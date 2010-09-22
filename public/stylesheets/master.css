@@ -1420,3 +1420,28 @@ body {
 .comment-sidebar-avatar img {
 	overflow: auto;
 }
+#support div {padding:0;}
+
+#support {
+    text-align:left;
+    background-color: #E9E0C2;
+}
+
+#support .row {
+    float:left;
+    margin:10px 0;
+    padding-left: 20px;
+    background-color: #E9E0C2;
+}
+#support .clear{
+  clear: both;
+}
+
+
+#support img {
+    margin-right:10px;
+}
+
+#support a img {
+    border:medium none;
+}
