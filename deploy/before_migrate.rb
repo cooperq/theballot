@@ -3,3 +3,5 @@
  run "ln -nfs #{shared_path}/config/newrelic.yml #{release_path}/config/newrelic.yml"
  run "ln -nfs #{shared_path}/config/memcached.yml #{release_path}/config/memcached.yml"
  run "ln -nfs #{shared_path}/config/session_secret.txt #{release_path}/config/session_secret.txt"
+ run "ln -nfs #{shared_path}/public/attachments #{release_path}/public/attachments"
+ run "ln -nfs #{shared_path}/public/themes #{release_path}/public/themes"
