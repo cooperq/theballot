@@ -1,6 +1,7 @@
  run "ln -nfs #{shared_path}/config/email.yml #{release_path}/config/email.yml"
  run "ln -nfs #{shared_path}/config/ferret_server.yml #{release_path}/config/ferret_server.yml"
  run "ln -nfs #{shared_path}/config/newrelic.yml #{release_path}/config/newrelic.yml"
+ run "ln -nfs #{shared_path}/config/initializers/recaptcha.rb #{release_path}/config/recaptcha.rb"
  run "ln -nfs #{shared_path}/config/memcached.yml #{release_path}/config/memcached.yml"
  run "ln -nfs #{shared_path}/config/session_secret.txt #{release_path}/config/session_secret.txt"
  run "ln -nfs #{shared_path}/public/attachments #{release_path}/public/attachments"
