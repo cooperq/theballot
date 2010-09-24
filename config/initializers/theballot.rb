@@ -1,7 +1,7 @@
 class TheBallot
   config = YAML.load_file(File.join(RAILS_ROOT,'config','email.yml'))
 
-  DEFAULT_DATE = Time.mktime(2008, 11, 4)
+  DEFAULT_DATE = Time.mktime(2010, 11, 2)
   ADMIN_EMAIL = config[:admin_email]
   SYSTEM_FROM_EMAIL = config[:system_from_email]
   TECH_ADMIN_EMAIL = config[:tech_admin_email]

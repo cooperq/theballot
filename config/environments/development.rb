@@ -29,4 +29,5 @@ else
   ActionController::Base.session_options[:session_domain] = '.theballot.staging.radicaldesigns.org'
 end
 
+config.action_mailer.delivery_method = :sendmail
 ActionController::Base.session_options[:session_key] = 'theballot_session_id'
