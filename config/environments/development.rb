@@ -23,10 +23,10 @@ if File.exist?(hosts_file = File.join('config','hosts.yml'))
   APPLICATION_STANDARD_DOMAIN = hosts['standard_domain']
   ActionController::Base.session_options[:session_domain] = hosts['session_domain']
 else
-  APPLICATION_HOST_NAME = 'theballot.staging.radicaldesigns.org'
-  APPLICATION_C3_DOMAIN = 'nonpartisan.theballot.staging.radicaldesigns.org'
-  APPLICATION_STANDARD_DOMAIN = 'theballot.staging.radicaldesigns.org'
-  ActionController::Base.session_options[:session_domain] = '.theballot.staging.radicaldesigns.org'
+  APPLICATION_HOST_NAME = 'theballot.huang.radicaldesigns.org'
+  APPLICATION_C3_DOMAIN = 'nonpartisan.theballot.huang.radicaldesigns.org'
+  APPLICATION_STANDARD_DOMAIN = 'theballot.huang.radicaldesigns.org'
+  ActionController::Base.session_options[:session_domain] = '.theballot.huang.radicaldesigns.org'
 end
 
 config.action_mailer.delivery_method = :sendmail
