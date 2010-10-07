@@ -81,6 +81,7 @@ class GuidesController < ApplicationController
     @messages ||= []
     @listheader ||= "Listing All Voter Guides"
     @conditions[:date] ||= "date >= '#{(TheBallot::GUIDES_STAY_CURRENT_FROM).to_s(:db)}'"
+    logger.warn @conditions.inspect
     @guides = Guide.paginate :all, :page => params[:page], :per_page => TheBallot::GUIDES_PER_LIST_PAGE, :include => [:user, :image, :members], :conditions => @conditions.values.join(' AND '), :order => 'date, endorsed DESC, num_members DESC, state DESC, city'
   end
 
@@ -123,9 +124,10 @@ class GuidesController < ApplicationController
   end
 
   def search
+      render :action => 'search_disabled' and return
     if params[:q]
       @query = params[:q].split.collect {|p| ['and', 'or', '*'].include?(p.downcase) || p.include?('*') ? p : p + '*'}.join(' ')
-      @guides = Guide.find_with_ferret(@query, :page => params[:page], :per_page => 10)
+      #@guides = Guide.find_with_ferret(@query, :page => params[:page], :per_page => 10)
       @pagination_params = { :q => params[:q] }
       @listheader = "Searching for \"#{@query.gsub(/\*/,'')}\""
       @messages = ["No results"] if @guides.empty?
@@ -138,7 +140,7 @@ class GuidesController < ApplicationController
       @query = ['*'] if @query.empty?
       @conditions = "1 = 1"
       @conditions << " AND state = '#{params[:guide][:state]}'" if !params[:guide][:state].empty?
-      @guides = Guide.find_with_ferret(@query.join(' AND '), :conditions => @conditions, :page => params[:page], :per_page => 10)
+      #@guides = Guide.find_with_ferret(@query.join(' AND '), :conditions => @conditions, :page => params[:page], :per_page => 10)
       @listheader = "Searching for \"#{@query}\""
       @messages = ["No results"] if @guides.empty?
       render :action => 'list' and return

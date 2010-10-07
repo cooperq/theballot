@@ -39,13 +39,14 @@ class Guide < ActiveRecord::Base
     GuidePromoter.deliver_approval_request( { :guide => self } ) if @recently_published && c3?
     GuidePromoter.deliver_publish_notification(self) if @recently_published
   end
-
+=begin
   acts_as_ferret :fields => { :name => {:boost => 3}, 
                               :city => {},
                               :state => {},
                               :description => {:boost => 2.5},
                               :index_contest_choice_titles => {:boost => 2},
                               :index_contest_choice_descriptions => {:boost => 1.5} }
+=end
 
   def index_contest_choice_titles
     index_contest_choices(:name)
