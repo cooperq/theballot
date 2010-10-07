@@ -1,5 +1,10 @@
 config/*.yml
 config/*.txt
+config/*.sql
+public/attachments
+public/cache
+tmp
+config/initializers/recaptcha.rb
 index
 log
 public/themes
