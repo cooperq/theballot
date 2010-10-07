@@ -1,5 +1,5 @@
 <div class="popup-inner">
-  <h2>Create a<% if @c3 || @guide.c3? %> non-partisan<% end %> voter guide</h2>
+  <h2>You can begin now and save as draft</h2>
   <% if @c3 || @guide.c3? %><p>(Important: Read these <%= link_to 'instructions', { :action => 'instructions', :id => 'c3' }, :popup => ['height=500,width=700'] %> first to make sure your guide will get approved!)</p>
   <% unless @c3 %>
   <p><%= link_to 'Click here', :action => 'update_legal', :id => @guide, :legal => Guide::PARTISAN %> to make this a partisan guide.</p><% end %>
