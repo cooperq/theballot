@@ -36,14 +36,21 @@
 <div id="polling-place">
   <%= render :partial => 'menu' %>
 </div>
-
+<div style="text-align: center">
+<img src="/images/voterguide-contest.png">
+<a href="http://www.youtube.com/watch?v=RRL-FAVEHvM"><img src="/images/voter-guide.jpg" border="0" style="margin-left: 4px;"></a>
+<a href="/resources/howto"><img src="/images/voterguide-button.png" border="0"></a>
+<br /> <br />
+</div>
 <% if (Guide.count_published > 19) -%>
 <div id="guide-count">
   <span id="guide-count-number"><%= Guide.count_published %></span> guides and counting... Join the fun!
 </div>
 <% end -%>
-
-
+<a href="javascript:window.location=%22http://www.facebook.com/sharer.php?u=%22+encodeURIComponent(document.location)+%22&#38;t=%22+encodeURIComponent(document.title)"><img align="absmiddle" src="/images/facebook-icon.png" alt="facebook" border="0" style="margin: 6px;" target="_blank"></a>
+<a href="javascript:window.location='http://twitter.com/home?status='+encodeURIComponent(document.location.href)"><img align="absmiddle" src="/images/twitter-icon.png" alt="twitter" border="0" style="margin: 6px;"></a>
+<span style="color: #333333; font-weight: bold; font-size: 14px;">Share</span> 
+<br />
   <div id="voter-guides">
     <h3><span>Browse Voter Guides</span></h3>
     <div id="voter-guide-links">
