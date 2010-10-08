@@ -5,7 +5,7 @@ class TheBallot
   ADMIN_EMAIL = config[:admin_email]
   SYSTEM_FROM_EMAIL = config[:system_from_email]
   TECH_ADMIN_EMAIL = config[:tech_admin_email]
-  ATTACHMENT_SIZE_LIMIT = 1.megabytes
+  ATTACHMENT_SIZE_LIMIT = 4.megabytes
   GUIDES_STAY_CURRENT_FROM = 3.months.ago
   GUIDES_PER_LIST_PAGE = 35
 
