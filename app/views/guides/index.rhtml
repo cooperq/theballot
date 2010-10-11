@@ -9,9 +9,8 @@
       Click on the map below or use the dropdown menu to view voter guides from the state.</p>
       <%= render 'guides/map' %>
   </div>
-  <div id="search-guides">
-    <h4><span>Search All Guides</span></h4>
-    <%= render "shared/search" %>
+  <div id="homepage-video">
+  <object width="500" height="306"><param name="movie" value="http://www.youtube.com/v/RRL-FAVEHvM?fs=1&amp;hl=en_US"></param><param name="allowFullScreen" value="true"></param><param name="allowscriptaccess" value="always"></param><embed src="http://www.youtube.com/v/RRL-FAVEHvM?fs=1&amp;hl=en_US" type="application/x-shockwave-flash" allowscriptaccess="always" allowfullscreen="true" width="500" height="306"></embed></object>
   </div>
 <% if false -%>
 <% if !@c3 -%>
@@ -26,10 +25,10 @@
 <div id="homepage-comments" >
 <h3>Recent Comments</h3>
 <% @homepage = true %>
-    <%= render :partial => 'comment_sidebar', :collection => Comment.recent.published.approved.legal(@c3).all(:limit => 5) %>
+    <%= render :partial => 'comment_sidebar', :collection => Comment.recent.published.approved.legal(@c3).all(:limit => 7) %>
 </div>
 <% end -%>
-
+    <%= render "shared/index_partners" %>
 </div>
 <div class="front-page-right">
 
