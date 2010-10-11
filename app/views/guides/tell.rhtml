@@ -1,6 +1,10 @@
 <h1>Tell a Friend:</h1>
 
 <% form_tag :action => 'send_message', :id => @guide do -%>
+<% if logged_in? -%>
+  <br />
+  <h4>Tell a friend isn't working for logged in supporters - Please <%= link_to "log out", '/account/logout' %> to use this tool.</h4>
+<% else -%>
 <% unless logged_in? -%>
   <p><label for="from_email">Your Email</label><br/>
   <%= text_field_tag 'from[email]' %></p>
@@ -23,5 +27,5 @@
 <% end -%>
 
 <%= submit_tag 'Send' %>
-
+<% end -%>
 <% end -%>
