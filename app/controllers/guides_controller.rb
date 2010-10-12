@@ -82,7 +82,7 @@ class GuidesController < ApplicationController
     @listheader ||= "Listing All Voter Guides"
     @conditions[:date] ||= "date >= '#{(TheBallot::GUIDES_STAY_CURRENT_FROM).to_s(:db)}'"
     logger.warn @conditions.inspect
-    @guides = Guide.paginate :all, :page => params[:page], :per_page => TheBallot::GUIDES_PER_LIST_PAGE, :include => [:user, :image, :members], :conditions => @conditions.values.join(' AND '), :order => 'date, endorsed DESC, num_members DESC, state DESC, city'
+    @guides = Guide.paginate :all, :page => params[:page], :per_page => TheBallot::GUIDES_PER_LIST_PAGE, :include => [:user, :image, :members], :conditions => @conditions.values.join(' AND '), :order => 'created_at DESC, date, endorsed DESC, num_members DESC, state DESC, city'
   end
 
   def list_past
