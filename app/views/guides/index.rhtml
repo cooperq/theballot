@@ -27,6 +27,7 @@
 <% @homepage = true %>
     <%= render :partial => 'comment_sidebar', :collection => Comment.recent.published.approved.legal(@c3).all(:limit => 7) %>
 </div>
+    <div style="clear:both;"></div>
 <% end -%>
     <%= render "shared/index_partners" %>
 </div>
