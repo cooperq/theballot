@@ -1450,3 +1450,13 @@ padding: 10px;
 #homepage-video {
 margin: 5px 10px 10px 10px;;
 }
+#howto {
+font-size: 13px;
+}
+#howto ul {
+margin: 10px 20px;
+}
+#howto h3 {
+margin: 20px 0 0 0;
+font-size: 18px;
+}
