@@ -1,11 +1,11 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en" xmlns:fb="http://facebook.com/2008/fbml">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <title>Voter Guides &mdash; <%= 'nonpartisan.' if @c3 %>theballot.org</title>
-  <meta name="title" content="Voter Guides - theballot.org" />
-  <meta name="description" content="I like this Local Voter Guide --everyone and their mom should use it to vote!!" />
-  <link rel="image_src" href="/images/linking-logo.gif" />
+  <title>Voter Guides - <%= 'nonpartisan.' if @c3 %>theballot.org  <%= ('- ' + @guide_title) if @guide_title %></title>
+  <meta name="title" content="Voter Guides >> theballot.org <%= ('- ' + @guide_title) if @guide_title %>" />
+  <meta name="description" content="<%= @guide_title if @guide_title %> I like this Local Voter Guide --everyone and their mom should use it to vote!!" />
+  <link rel="image_src" href="http://www.theballot.org/images/linking-logo.gif" />
 <!--  <%= stylesheet_link_tag 'http://ixley.com/ballot/master.css', :media => 'all' %> -->
   <%= stylesheet_link_tag 'master.css', :media => 'all' %>
   <%= @content_for_stylesheets %>

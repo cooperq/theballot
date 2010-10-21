@@ -1,3 +1,4 @@
+<% @guide_title = @guide.name + ' (' + @guide.state + ')' %>
 <% #add theme stylesheet links
 if !@guide.theme.nil?
   if !@guide.theme.style_url.nil? && !@guide.theme.style_url.empty?
@@ -28,6 +29,21 @@ end
 
   <%= @liquid %>
 
+<div id="facebook-like"> <h2>Promote this Guide on Facebook</h2>
+<script src="https://connect.facebook.net/en_US/all.js"></script>
+<script>
+Event.observe(window, 'load', function(){
+    FB.init({appId: '160557443967060', 
+             status: true, 
+             cookie: true,
+             xfbml: true});
+
+});
+</script>
+
+<fb:like></fb:like> 
+<div id="fb-root"></div>
+  </div>
 <div id="comments" class="sidebar-frame">
   <%= render "guides/comments" %>
 </div>

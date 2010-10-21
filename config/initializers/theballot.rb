@@ -7,7 +7,7 @@ class TheBallot
   TECH_ADMIN_EMAIL = config[:tech_admin_email]
   ATTACHMENT_SIZE_LIMIT = 4.megabytes
   GUIDES_STAY_CURRENT_FROM = 3.months.ago
-  GUIDES_PER_LIST_PAGE = 35
+  GUIDES_PER_LIST_PAGE = 15  
 
   # past per-page can be 0 to keep past guides off homepage
   GUIDES_PER_PAST_LIST_PAGE = 20
