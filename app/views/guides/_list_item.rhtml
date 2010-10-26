@@ -35,5 +35,18 @@
   <div class="guide-list-description">
     <%= truncate strip_tags(guide.description), 100 %>
   </div>
+<script src="https://connect.facebook.net/en_US/all.js"></script>
+<script>
+Event.observe(window, 'load', function(){
+    FB.init({appId: '160557443967060', 
+             status: true, 
+             cookie: true,
+             xfbml: true});
+
+});
+</script>
+<fb:like layout="button_count" href="<%= guide.permalink_url %>"></fb:like> 
+<div id="fb-root"></div>
+  
 </div>
 </div>
