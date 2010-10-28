@@ -66,7 +66,7 @@ class GuidesController < ApplicationController
   
   def index
     @showing_author = true
-    list
+    list(15)
     @conditions = {} #hack
     list_past
     render :action => 'index', :layout => 'frontpage'
@@ -76,13 +76,13 @@ class GuidesController < ApplicationController
   verify :method => :post, :only => [ :destroy, :create, :update ],
          :redirect_to => { :action => :list }
 
-  def list
+  def list(count = nil)
     @conditions ||= {} 
     @messages ||= []
     @listheader ||= "Listing All Voter Guides"
     @conditions[:date] ||= "date >= '#{(TheBallot::GUIDES_STAY_CURRENT_FROM).to_s(:db)}'"
     logger.warn @conditions.inspect
-    @guides = Guide.paginate :all, :page => params[:page], :per_page => TheBallot::GUIDES_PER_LIST_PAGE, :include => [:user, :image, :members], :conditions => @conditions.values.join(' AND '), :order => 'created_at DESC, date, endorsed DESC, num_members DESC, state DESC, city'
+    @guides = Guide.paginate :all, :page => params[:page], :per_page => (count || TheBallot::GUIDES_PER_LIST_PAGE), :include => [:user, :image, :members], :conditions => @conditions.values.join(' AND '), :order => 'created_at DESC, date, endorsed DESC, num_members DESC, state DESC, city'
   end
 
   def list_past
