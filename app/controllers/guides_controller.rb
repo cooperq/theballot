@@ -66,7 +66,7 @@ class GuidesController < ApplicationController
   
   def index
     @showing_author = true
-    list(15)
+    list(25)
     @conditions = {} #hack
     list_past
     @featured = Guide.find_all_by_featured true, :include => [:user, :image, :members]
