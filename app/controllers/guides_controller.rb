@@ -69,6 +69,7 @@ class GuidesController < ApplicationController
     list(15)
     @conditions = {} #hack
     list_past
+    @featured = Guide.find_all_by_featured true, :include => [:user, :image, :members]
     render :action => 'index', :layout => 'frontpage'
   end
 

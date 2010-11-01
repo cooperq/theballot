@@ -21,6 +21,11 @@
 <% end -%>
 <% end -%>
 
+<div id="featured-guides" style="margin-bottom: 10px; padding-left: 10px; padding-right: 10px;">
+  <h3>Featured Guides</h3>
+  <%= render :partial => 'list_item', :collection => @featured %>
+</div>
+
 <% if !@c3 -%>
 <div id="homepage-comments" >
 <h3>Recent Comments</h3>
@@ -33,24 +38,48 @@
 </div>
 <div class="front-page-right">
 
+<div id="social-promote">
+  <h2>All hands on deck!!!</h2>
+  <p>
+    Please Facebook
+    and tweet TheBallot.org
+    and your favorite voter
+    guides RIGHT NOW!
+  </p>
+
+  <div style="float: left; width: 45%;">
+    <a href="javascript:window.location='http://www.facebook.com/sharer.php?u='+encodeURIComponent(document.location.href)"><img src="/images/facebook.png" alt="facebook" border="0" target="_blank"></a>
+  </div>
+
+  <div style="float: left; width: 45%; margin-left: 15px;">
+    <a href="Javascript:window.location='http://twitter.com/home?status='+encodeURIComponent(document.location.href)"><img src="/images/twitter.png" alt="twitter" border="0"></a>
+  </div>
+
+  <br style="clear: both;" />
+</div>
+
+<div>
+  <img src="/images/VoteSanity.png" style="float: left; width: 128px; height: 128px;">
+  <img src="/images/IVotedSanity.jpg" style="float: left; width: 128px; height: 128px; padding-left: 5px;">
+  <br style="clear: both;" />
+
+  <div style="text-align: center; font-size: 14px;">Make this your profile pic on Facebook</div>
+  <br />
+</div>
+
 <div id="polling-place">
   <%= render :partial => 'menu' %>
 </div>
-<div style="text-align: center">
-<br />
-<img src="/images/votesanity.gif">
-<a href="/resources/howto"><img src="/images/voterguide-button.png" border="0"></a>
-<br /> <br />
+
+<div style="padding: 10px 30px 10px;">
+  <a href="/resources/howto"><img src="/images/voterguide-button.png" border="0"></a>
 </div>
+
 <% if (Guide.count_published > 19) -%>
 <div id="guide-count">
   <span id="guide-count-number"><%= Guide.count_published %></span> guides and counting... Join the fun!
 </div>
 <% end -%>
-<a href="javascript:window.location='http://www.facebook.com/sharer.php?u='+encodeURIComponent(document.location.href)"><img align="absmiddle" src="/images/facebook-icon.png" alt="facebook" border="0" style="margin: 6px;" target="_blank"></a>
-  <a href="Javascript:window.location='http://twitter.com/home?status='+encodeURIComponent(document.location.href)"><img src="/images/twitter-icon.png" alt="twitter" border="0" style="margin: 6px;float: left;"></a>
-  <span style="color: #333333; font-weight: bold; font-size: 14px;">Share</span> 
-<br />
   <div id="voter-guides">
     <h3><span>Browse Voter Guides</span></h3>
     <div id="voter-guide-links">

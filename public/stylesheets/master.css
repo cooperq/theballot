@@ -381,7 +381,7 @@ body {
 	background-color: #FAFAFA;
 	padding: 9px 7px;
 	}
-#home #guide-count, #home #polling-place, #how-to {
+#home #guide-count, #home #polling-place, #how-to, #social-promote {
 	background-color: #DFD7B1;
 	padding: 9px 7px 9px 10px;
 	color: #666666;
@@ -389,7 +389,7 @@ body {
 	margin-bottom: 10px;
 	vertical-align: middle;
 	}
-#guide-count-number, #polling-place {
+#guide-count-number, #polling-place, #social-promote {
 	font-size: 14px;
 	font-weight: bold;
 	}
@@ -425,9 +425,8 @@ body {
 #create-link { float: left;}
 #voter-guide-links { margin-bottom: 8px; }
 
-	
 /* hide icons on home page only */	
-#home .guide-list-image img {
+#home #voter-guides .guide-list-image img {
 	display: none;
 	}
 	
@@ -761,7 +760,7 @@ body {
 	text-decoration: none;
 	}
 
-#application #guide-list-container {
+#application #guide-list-container, #featured-guides #guide-list-container {
 	display: block;
 	float: left;
 	width: 550px;
@@ -769,14 +768,14 @@ body {
 	background-color: #fafafa;
 	margin-bottom: 8px;
 	}
-#application .guide-list-element {
+#application .guide-list-element, #featured-guides .guide-list-element {
 	padding: 10px;
 	min-height: 50px; /* icon height */
 	margin-bottom: 5px;
 	background-color: #f5f5f5;
 	clear: both;
 	}
-#application .guide-list-element:hover {
+#application .guide-list-element:hover, #featured-guides .guide-list-element:hover {
 	background-color: #ffffff;
 	}	
 .guide-endorsed-stamp {
@@ -794,16 +793,16 @@ body {
 	margin-left: 3px;
 	}	
 
-#application .guide-list-image {
+#application .guide-list-image, #featured-guides .guide-list-image {
 	float: left;
 	height: 50px;
 	padding-right: 10px;
 	border-right: 1px dotted #999999;
 	}
-#application .guide-list-image img {
+#application .guide-list-image img, #featured-guides .guide-list-image img {
 	border: 1px solid #cccccc;
 	}
-#application .guide-list-basics {
+#application .guide-list-basics, #featured-guides .guide-list-basics {
 	margin-left: 70px;
 	}
 .guide-list-name {
@@ -1393,7 +1392,7 @@ body {
 	font-style: italic;
 	color: #999;
 }
-#homepage-comments {
+#homepage-comments, #featured-guides {
 	width: 485px;
 	background-color: #F5F5F5;
 	display: block;
@@ -1403,7 +1402,7 @@ body {
 	position: relative;
 	left: 10px;
 }
-#homepage-comments .comment-sidebar-listing {
+#homepage-comments .comment-sidebar-listing, #featured-guides {
 	margin: 0;
 	padding: 6px 0;
 }

@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20081117043902) do
+ActiveRecord::Schema.define(:version => 20101031215920) do
 
   create_table "assets", :force => true do |t|
     t.string "type"
@@ -109,6 +109,7 @@ ActiveRecord::Schema.define(:version => 20081117043902) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "num_members"
+    t.boolean  "featured",    :default => false
   end
 
   add_index "guides", ["user_id"], :name => "index_on_user_id"
